@@ -1,0 +1,13 @@
+.grid {
+    display: flex;
+}
+
+.grid__square {
+    border: 1px solid black;
+    width: 20px;
+    height: 20px;
+}
+
+.grid__square:hover {
+    background-color: black;
+}

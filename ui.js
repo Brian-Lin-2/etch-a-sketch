@@ -2,11 +2,13 @@ const createGrids = () => {
     // Make 16 columns of 16 divs.
     for (let col = 0; col < 16; col++) {
         const colGrid = document.createElement('div');
-        colGrid.classList.add(`grid__row${col}`);
+        colGrid.classList.add(`grid__row`);
 
         for (let row = 0; row < 16; row++) {
             const rowGrid = document.createElement('div');
-            grid.appendChild(rowGrid);
+            rowGrid.classList.add('grid__square')
+
+            colGrid.appendChild(rowGrid);
         }
 
         grid.appendChild(colGrid);
