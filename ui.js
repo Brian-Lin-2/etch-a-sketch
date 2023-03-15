@@ -1,4 +1,9 @@
+const grid = document.querySelector('.grid');
+
 const createGrids = (num) => {
+    // Remove any old grids.
+    grid.innerHTML = '';
+
     for (let col = 0; col < num; col++) {
         const colGrid = document.createElement('div');
         colGrid.classList.add(`grid__row`);
@@ -12,14 +17,27 @@ const createGrids = (num) => {
 
         grid.appendChild(colGrid);
     }
+
+     // Creates hover effect.
+     const gridSquare = document.querySelectorAll('.grid__square');
+
+     gridSquare.forEach(square => square.addEventListener('mouseover', () => square.classList.add('grid__hovered')));
 }
 
-const grid = document.querySelector('.grid');
+const sizeChange = () => {
+    let newSize = prompt("How many rows?");
+
+    if (newSize <= 0 || newSize > 64) {
+        alert("Must be between 0 and 64.");
+    } else {
+        createGrids(newSize);
+    }
+}
 
 // 16 is default.
 createGrids(16);
 
-// Creates hover effect.
-const gridSquare = document.querySelectorAll('.grid__square');
+// Changes grid size.
+const changeSize = document.querySelector('.sketchpad__button');
 
-gridSquare.forEach(square => square.addEventListener('mouseover', () => square.classList.add('grid__hovered')));
+changeSize.addEventListener('click', sizeChange);
