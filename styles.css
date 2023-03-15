@@ -8,6 +8,6 @@
     height: 20px;
 }
 
-.grid__square:hover {
+.grid__hovered {
     background-color: black;
 }

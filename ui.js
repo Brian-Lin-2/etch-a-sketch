@@ -19,3 +19,8 @@ const createGrids = () => {
 const grid = document.querySelector('.grid');
 
 createGrids();
+
+// Creates hover effect.
+const gridSquare = document.querySelectorAll('.grid__square');
+
+gridSquare.forEach(square => square.addEventListener('mouseover', () => square.classList.add('grid__hovered')));
